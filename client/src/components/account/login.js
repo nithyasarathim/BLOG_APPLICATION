@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
+    setSuccessMessage('');
 
     try {
       const response = await fetch('http://localhost:8000/account/login', {
@@ -21,7 +24,10 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Login successful!');
+        setSuccessMessage('Login successful!');
+        setTimeout(() => {
+          navigate('/feeds');
+        }, 1000);
       } else {
         setErrorMessage(data.message || 'Login failed. Please try again.');
       }
@@ -77,6 +83,7 @@ const Login = () => {
             <br />
             <br />
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            {successMessage && <p style={{ color: 'rgb(0, 126, 36)' }}>{successMessage}</p>}
             <br />
             <p>
               New to Blog it?
