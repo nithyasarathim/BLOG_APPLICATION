@@ -15,10 +15,12 @@ mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch((err) => console.log("Error occurred: ", err));
 
-const accountRouter = require('./Routers/account');
-const subscriptionRouter = require('./Routers/subscription');
+const accountRouter = require('./Routers/AccountRoute');
+const subscriptionRouter = require('./Routers/SubscriptionRoute');
+const blogsRouter = require('./Routers/BlogsRoute');
 
 app.use('/account', accountRouter);
 app.use('/subscribe', subscriptionRouter);
+app.use('/blogs', blogsRouter);
 
 app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
