@@ -29,7 +29,7 @@ const Hero = () => {
       <p className="hero-subtitle">Join a thriving community of storytellers, thinkers, and creators.</p>
 
       <div className="hero-actions">
-        <Link to="/create-post" className="btn btn-primary hero-btn" style={{backgroundColor:"rgb(0, 208, 255)"}}>Start Writing</Link>
+        <Link to="/blogs/create" className="btn btn-primary hero-btn" style={{backgroundColor:"rgb(0, 208, 255)"}}>Start Writing</Link>
         <a href="#blogs" className="btn btn-secondary hero-btn">Discover Stories</a>
       </div>
 
