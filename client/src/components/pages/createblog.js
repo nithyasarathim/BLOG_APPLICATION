@@ -37,7 +37,7 @@ const CreateBlog = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:8000/blogs/create', {
+            const response = await fetch('http://blogapp-backend-yyqy.onrender.com/blogs/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const UpdateBlog = () => {
     const fetchBlogDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8000/blogs/${blogId}`);
+        const response = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`);
         const data = await response.json();
         if (response.ok) {
           setBlog(data);

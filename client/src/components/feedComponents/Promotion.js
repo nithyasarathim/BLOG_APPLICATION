@@ -6,7 +6,7 @@ const Promotion = () => {
 
   const doSubscribe = async () => {
     try {
-      const response = await fetch('http://localhost:8000/subscribe', {
+      const response = await fetch('http://blogapp-backend-yyqy.onrender.com/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),

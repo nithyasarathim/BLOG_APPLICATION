@@ -70,7 +70,7 @@ const BlogDetails = () => {
     
   const deleteBlog = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/blogs/${blogId}`, {
+      const res = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -88,7 +88,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/blogs/${blogId}`);
+        const response = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`);
         const data = await response.json();
         setBlog(data);
       } catch (error) {

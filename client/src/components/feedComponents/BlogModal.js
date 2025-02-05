@@ -17,7 +17,7 @@ const BlogModal = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/blogs`);
+        const response = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs`);
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }
