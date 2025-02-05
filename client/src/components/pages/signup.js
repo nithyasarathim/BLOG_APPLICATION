@@ -30,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch('http://blogapp-backend-yyqy.onrender.com/account/signup', {
+      const response = await fetch('https://blogapp-backend-yyqy.onrender.com/account/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),

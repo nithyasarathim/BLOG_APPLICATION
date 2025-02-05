@@ -16,7 +16,7 @@ const BlogDetails = () => {
     if (!comment.trim()) return alert('Comment cannot be empty!');
 
     try {
-      const res = await fetch(`http://localhost:8000/blogs/${blogId}/comments`, {
+      const res = await fetch(`https://blogapp-backend-yyqy.onrender.com/blogs/${blogId}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const BlogDetails = () => {
     const commentId = `${comment.user}${comment.comment}`;
 
     try {
-      const res = await fetch(`http://localhost:8000/blogs/${blogId}/comments/${encodeURIComponent(commentId)}`, {
+      const res = await fetch(`https://blogapp-backend-yyqy.onrender.com/blogs/${blogId}/comments/${encodeURIComponent(commentId)}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -70,7 +70,7 @@ const BlogDetails = () => {
     
   const deleteBlog = async () => {
     try {
-      const res = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`, {
+      const res = await fetch(`https://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -88,7 +88,7 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`);
+        const response = await fetch(`https://blogapp-backend-yyqy.onrender.com/blogs/${blogId}`);
         const data = await response.json();
         setBlog(data);
       } catch (error) {

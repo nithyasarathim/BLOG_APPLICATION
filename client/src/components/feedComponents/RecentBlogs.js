@@ -8,7 +8,7 @@ const RecentBlogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://blogapp-backend-yyqy.onrender.com/blogs/recent');
+        const response = await fetch('https://blogapp-backend-yyqy.onrender.com/blogs/recent');
         const data = await response.json();
         setBlogs(data.slice(0, 3));
       } catch (error) {
