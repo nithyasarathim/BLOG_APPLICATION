@@ -40,6 +40,6 @@ const Hero = () => {
       </div>
     </div>
   );
-};
+};mongodb+srv://nithyasarathim:<db_password>@cluster1.jllwa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
 
 export default Hero;

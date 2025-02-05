@@ -52,7 +52,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-// Create a new blog with externalLink support
+
 router.post('/create', async (req, res) => {
   const { title, content, author, category, externalLink } = req.body;
 
@@ -65,7 +65,7 @@ router.post('/create', async (req, res) => {
     content,
     author,
     category,
-    externalLink, // Include externalLink here if provided
+    externalLink, 
     createdAt: new Date(),
   });
 

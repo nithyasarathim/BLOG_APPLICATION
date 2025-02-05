@@ -5,22 +5,27 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/blogit-database";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/blogit-database";
 
-app.use(cors({ origin: '*' })); 
+// Middleware
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB Connected'))
-    .catch((err) => console.log("Error occurred: ", err));
+// Connect to MongoDB (Fix for deprecated options)
+mongoose.connect(MONGO_URI)
+    .then(() => console.log('✅ MongoDB Connected'))
+    .catch((err) => console.log("❌ MongoDB Connection Error: ", err));
 
+// Import routes
 const accountRouter = require('./Routers/AccountRoute');
 const subscriptionRouter = require('./Routers/SubscriptionRoute');
 const blogsRouter = require('./Routers/BlogsRoute');
 
+// Use routes
 app.use('/account', accountRouter);
 app.use('/subscribe', subscriptionRouter);
 app.use('/blogs', blogsRouter);
 
-app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
+// Start server
+app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
