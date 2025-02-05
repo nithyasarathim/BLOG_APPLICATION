@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/blogit-database";
 
 // Middleware
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: 'https://blog-application-two-ruddy.vercel.app' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
